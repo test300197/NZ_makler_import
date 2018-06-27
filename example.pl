@@ -278,7 +278,7 @@ sub parse_adv {
     # заголовок осн. информация
     my $main_title = $dom->at('h1[class="title-info-title"]')->all_text;
     $main_title = trim $main_title;
-    given($data->{'type_code'}) {
+    given($data->{type_code}) {
         when ('room') {
             my @bp = map {trim $_} grep { $_ && length($_) > 1 } split /[,()]/, $main_title;
             # комната м2 бла...
